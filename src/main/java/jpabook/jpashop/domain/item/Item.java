@@ -34,7 +34,7 @@ public abstract class Item { //추상클래스로 일단 만들겠다 구현체�
     * */
     public void addStock(int quantity){
         this.stockQuantity += quantity;
-    }
+    }//만약 주문취소를 했다면 주문수량을 +1을 해줘야함
 
     public void removeStock(int quantity){
         int realStock = this.stockQuantity - quantity;

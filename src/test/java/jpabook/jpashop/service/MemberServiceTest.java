@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-@Transactional // 데이터의 변경이 있어야하기 때문데
+@Transactional // 데이터의 변경이 있어야하기 때문에 필요하다. test단에서는 rollback을 해준다
 class MemberServiceTest {
     @Autowired
     MemberService memberService;
