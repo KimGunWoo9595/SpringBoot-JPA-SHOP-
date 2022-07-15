@@ -19,26 +19,25 @@ public class OrderItem {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="item_id")
-    private Item item;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="order_id")
     private Order order;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="item_id")
+    private Item item;
 
     private int orderPrice; //주문 가격
 
     private int count; // 주문 수량
 
     //이 코드는 다른 곳에서 orderItem을 생성하는것을 막아준다. 만약 이런 코드를 본다면 아 다른곳에서 생성자로 생성하지 말아야하는구나라고 생각해야한다
-   /* protected OrderItem(){
+   /* protected OrderItem(){ // 13번째 줄의 어노테이션으로 대체할 수 있다.
         ;
     }*/
 
 
     //==생성메소드==//
     public static OrderItem createOrderItem(Item item, int orderPrice, int count){
-
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
         orderItem.setOrderPrice(orderPrice);

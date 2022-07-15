@@ -20,7 +20,7 @@ public class Delivery {
     @OneToOne(mappedBy = "delivery",fetch = LAZY) //일대일 매핑 거울
     private Order order;
 
-    @Embedded
+    @Embedded // 값 타입
     private Address address;
 
     @Enumerated(EnumType.STRING)
