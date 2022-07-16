@@ -14,9 +14,15 @@ Spring boot 와 JPA로 제작한 쇼핑몰
 jpa의 동작 방식에 대하여 알게되었다. 그리고 매핑의 종류와 각각의 매핑에대하여 더 상세하게 알게되었고<br>
 줄 곧 myBatis로 프로젝트를 해온 나에게는 jpa란 정말 편리한 것 같다.
   <hr>
+  <b>1.메인페이지</b><br>
 <img width="80%" src="https://user-images.githubusercontent.com/104709432/179339446-7fecbd7b-eb72-4ba8-807f-a555fb7767a2.JPG"/>
+  <b>2.회원등록</b><br>
 <img width ="80%" src="https://user-images.githubusercontent.com/104709432/179339586-6189416e-53d3-434a-b78e-117189b01f42.JPG"/>
+  <b>3.회원목록</b><br>
 <img width ="80%" src="https://user-images.githubusercontent.com/104709432/179339588-7344ceb0-415a-49e7-9e5d-4cc8c0ca02fc.JPG"/>
+  <b>4.상품등록</b><br>
 <img width ="80%" src="https://user-images.githubusercontent.com/104709432/179339594-65f1158d-1363-4189-8471-f7b0a3fb9d4c.JPG"/>
+<b>5.상품목록</b><br>
 <img width ="80%" src="https://user-images.githubusercontent.com/104709432/179339598-d0a68ed2-1795-4b2f-a60b-399c4b224728.JPG"/>
+  <b>6.상품주문</b><br>
 <img width ="80%" src="https://user-images.githubusercontent.com/104709432/179339601-461910c4-4792-4604-8c78-fae9a47b6038.JPG"/>
