@@ -29,6 +29,7 @@ public class Category {
 
 
     // self로 연간관계를 걸었다
+    //@XToOne(OneToOne, ManyToOne) 관계는 기본이 즉시로딩이므로 직접 지연로딩으로 설정해야 한다
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="parent_id")
     private Category parent;

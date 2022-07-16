@@ -38,6 +38,7 @@ public abstract class Item { //추상클래스로 일단 만들겠다 구현체�
 
     public void removeStock(int quantity){
         int realStock = this.stockQuantity - quantity;
+        //재고를 빼려고하는데 뺀 값이 음수라면 예외를 만들어서 발생시킨다
         if(realStock<0){
             throw new NotEnoughStockException("need more stock");
         }

@@ -1,5 +1,6 @@
 package jpabook.jpashop.service;
 
+import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +21,26 @@ public class ItemService {
         itemRepository.save(item);
     }
 
-    public List<Item> finaItems(){
+    //중요!!(변경 감지 기능)  수정 방법
+    @Transactional          //트랜잭션이 있는 서비스 계층에 식별자( id )와 변경할 데이터를 명확하게 전달하자
+    public void updateItem(Long itemId, String name , int price, int stockQuantity){
+        Item item = itemRepository.findOne(itemId); // 실제 영속성 컨텍스트에 있는 애를 찾은거다.
+        item.setPrice(price);
+        item.setName(name);
+        item.setStockQuantity(stockQuantity);
+
+        //dirty checking
+        //영속엔티티의 값을 다시 셋팅 해줬으면 변경이 감지 되었다. transcation이 flush를 날려서 변경된 애를 다 찾아준다.
+        //찾아서 업데이트쿼리를 날려서 업데이트를 알아서해준다.
+
+        //영속성 컨텍스트에서 엔티티를 다시 {조회}한 후에 데이터를 수정하는 방법 == 변경 감지 기능
+        //트랜잭션 안에서 엔티티를 다시 조회, 변경할 값 선택 트랜잭션 커밋 시점에 변경 감지(Dirty Checking)
+        //이 동작해서 데이터베이스에 UPDATE SQL 실행
+    }
+
+
+
+    public List<Item> findItems(){
         return itemRepository.findAll();
     }
 

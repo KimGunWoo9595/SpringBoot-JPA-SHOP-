@@ -19,7 +19,6 @@ public class MemberService {
     //회원 가입
     @Transactional // 읽기가 아닌 쓰기에서 readonly= true를 넣으면 절대 안된다!
     public Long join(Member member){
-
         validateDuplicateMember(member);//중복회원 검증 로직직
         memberRepository.save(member);
         return member.getId(); // 영속성 컨텍스트에 persist하면 엔티티의 키값인 @id붙은것(pk)은 들어가진다

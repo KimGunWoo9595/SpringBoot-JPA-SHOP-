@@ -28,7 +28,7 @@ public class Order {
     @JoinColumn(name ="member_id")
     private Member member;
 
-    //cascade의 경우에는 프라이빗 오너의 입장에서 생각하면 쉬워진다.
+    //cascade의 경우에는 프라이빗오너의 입장에서 생각하면 쉬워진다.
     //OrderItem / Delivery는 order에서만 쓴다.???
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) //원래같은면 persist를 각각해줘야하는데 cascade = CascadeType.ALL를쓰면
     private List<OrderItem> orderItems = new ArrayList<>();   // order만 persist하면 orderItems까지 persist된다!

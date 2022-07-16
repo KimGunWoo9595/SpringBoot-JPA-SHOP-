@@ -31,7 +31,7 @@ public class MemberController {
     public String create(@Valid MemberForm form, BindingResult result){ //@Valid를쓰면 저 클래스에있는 어노테이션사용가능
 
         //@Valid에서  오류가 있고 그 다음에 BindingResult가 있다면 오류가 담길 수 있다.
-        if(result.hasErrors()){
+        if(result.hasErrors()){// 만약 바인딩된것에서 오류가있다면
             return "members/createMemberForm"; // 다시 돌려보내서 에러타임리프를 만나게되겠다
         }
 
